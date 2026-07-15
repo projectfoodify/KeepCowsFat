@@ -1,10 +1,10 @@
 import { FunctionComponent } from "react";
 import { Text } from "../../UI/Text/Text";
 
-export const HomePage: FunctionComponent = () => {
+export const ContactPage: FunctionComponent = () => {
     return (
         <div>
-            <Text>Home</Text>
+            <Text>Contact</Text>
         </div>
     );
 };

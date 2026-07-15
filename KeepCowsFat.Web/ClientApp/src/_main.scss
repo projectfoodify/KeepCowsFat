@@ -1,0 +1,19 @@
+// application colors
+$white: #ffffff;
+$color-green: #6fd16f;
+$color-beige: #d2ae6d;
+
+// application fonts
+@font-face {
+	font-family: "Bantayog";
+	src: url("./assets/fonts/Bantayog.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Hieroglyphics";
+	src: url("./assets/fonts/ancient-egyptian-hieroglyphs.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}

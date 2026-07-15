@@ -1,19 +1,26 @@
 import { FunctionComponent } from "react";
 import { Route, Routes } from "react-router-dom";
 import { routes } from "./routes";
-import { Header } from "./common/header/Header";
-import { Footer } from "./common/footer/Footer";
+
+import "./_app.scss";
+import { Header } from "./components/header/Header";
+import { Footer } from "./components/footer/Footer";
+import { createServiceContainer, ServiceContainerProvider } from "./services/ServiceContainer";
 
 export const App: FunctionComponent = () => {
+	const serviceContainer = createServiceContainer();
+
 	return (
-		<>
+		<ServiceContainerProvider serviceContainer={serviceContainer}>
 			<Header />
-			<Routes>
-				{routes.map(({ pathName, Component }) => (
-					<Route key={pathName} path={pathName} element={<Component />} />
-				))}
-			</Routes>
+			<main>
+				<Routes>
+					{routes.map(({ pathName, Component }) => (
+						<Route key={pathName} path={pathName} element={<Component />} />
+					))}
+				</Routes>
+			</main>
 			<Footer />
-		</>
+		</ServiceContainerProvider>
 	);
 };
